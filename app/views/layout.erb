@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 
+  <!--
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
@@ -18,6 +18,25 @@
   <title></title>
 </head>
 <body>
+  <header>
+    <h1>Scribbl</h1>
+    <%if !current_user%>
+      <span><a href="/users/new">sign up</a></span>
+      <span><a href="/users/login">log in</a></span>
+    <%else%>
+      <span><a href="/users/logout">log out</a></span>
+      <span><a href="/users/<%=current_user.id%>">profile</a></span>
+    <%end%>
+
+    <nav>
+      <ul>
+        <li><a href="/math/show">math</a></li>
+        <li><a href="/science/show">science</a></li>
+        <li><a href="/social_studies/show">social studies</a></li>
+        <li><a href="/english/show">english</a></li>
+      </ul>
+    </nav>
+  </header>
   <%= yield %>
 </body>
 </html>

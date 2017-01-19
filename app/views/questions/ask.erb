@@ -1,0 +1,16 @@
+<h2> Ask Question </h2>
+
+<form id="qform" action="/questions" method="post">
+  <label>title</label>
+  <input type="text" name="question[title]">
+  <br>
+  <label>tag</label>
+  <input type="text" name="question[tag]">
+  <br>
+  <label>password</label>
+
+  <input type="submit" value="post">
+</form>
+
+
+<textarea form="qform" cols="50" rows="20" name="question[content]"></textarea>
