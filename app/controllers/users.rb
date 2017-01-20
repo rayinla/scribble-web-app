@@ -44,3 +44,17 @@ get '/users/:id' do
   erb :'users/profile'
 end
 
+get '/users/:id/follow' do
+  user_following = User.find_by(id: params[:id])
+  if user_following.followers.include?(current_user.username) == false
+    current_user.followings.create(username: user_following.username)
+    user_following.followers.create(username: current_user.username)
+
+  end
+
+
+  redirect "/users/#{user_following.id}"
+end
+
+
+

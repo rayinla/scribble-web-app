@@ -23,9 +23,11 @@
     <%if !current_user%>
       <span><a href="/users/new">sign up</a></span>
       <span><a href="/users/login">log in</a></span>
+      <span><a href="/users">users</a></span>
     <%else%>
       <span><a href="/users/logout">log out</a></span>
       <span><a href="/users/<%=current_user.id%>">profile</a></span>
+      <span><a href="/users">users</a></span>
     <%end%>
 
     <nav>
