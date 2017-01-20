@@ -1,7 +1,7 @@
 <section id="bio">
   <p>User: <%=@user.username%></p>
-  <p>Following: <%=@user.followings.select(:username).distinct.count%></p>
-   <p>Followers: <%=@user.followers.select(:username).distinct.count%></p>
+  <p><a href="/users/<%=@user.id%>/following">Following:</a> <%=@user.followings.select(:username).distinct.count%></p>
+   <p><a href="/users/<%=@user.id%>/followers">Followers:</a> <%=@user.followers.select(:username).distinct.count%></p>
 </section>
 
 <p><a href="/users/<%=@user.id%>/follow">follow</a></p>

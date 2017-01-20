@@ -49,11 +49,20 @@ get '/users/:id/follow' do
   if user_following.followers.include?(current_user.username) == false
     current_user.followings.create(username: user_following.username)
     user_following.followers.create(username: current_user.username)
+  end
 
   end
 
+get '/users/:id/following' do
+  @user_following = User.find_by(id: params[:id])
+  erb :'users/following'
+end
 
-  redirect "/users/#{user_following.id}"
+
+
+get '/users/:id/followers' do
+  @user_following = User.find_by(id: params[:id])
+    erb :'users/followers'
 end
 
 

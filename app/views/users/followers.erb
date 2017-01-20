@@ -1,0 +1,4 @@
+<%@user_following.followings.select(:username).distinct.each do |user|%>
+  <p><%=user.username%></p>
+<%end%>
+
